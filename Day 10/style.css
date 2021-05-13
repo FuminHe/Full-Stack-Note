@@ -1,0 +1,20 @@
+body {
+  height: 100vh;
+  /* height:100% doesn't work */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  height: 400px;
+  width: 400px;
+  border: 5px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.item {
+  height: 80px;
+  width: 80px;
+  border: 3px solid orange;
+}

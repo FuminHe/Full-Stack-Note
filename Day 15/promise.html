@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function doubleAfter2Seconds(x) {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            resolve(x * 2);
+          }, 2000);
+        });
+      }
+      //   doubleAfter2Seconds(10).then((r) => {
+      //     console.log(r);
+      //   });
+
+      //   let sum =
+      //     doubleAfter2Seconds(10) +
+      //     doubleAfter2Seconds(20) +
+      //     doubleAfter2Seconds(30);
+
+      // console.log(sum);
+
+      // async function always return a promise
+      async function addAsync() {
+        const a = await doubleAfter2Seconds(10);
+        const b = await doubleAfter2Seconds(20);
+        const c = await doubleAfter2Seconds(30);
+
+        return a + b + c;
+      }
+
+      // async need to use then to get result??
+      addAsync().then((r) => console.log(r));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,2 @@
+### get all rockets => 837.416ms
+GET http://localhost:3000/rockets

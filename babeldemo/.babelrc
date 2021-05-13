@@ -1,0 +1,12 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "browsers": ["lst 2 versions", "safari >= 7"]
+        }
+      }
+    ]
+  ]
+}

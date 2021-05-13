@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myModule">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.js"></script>
+    <!-- <script src="main.js"></script> -->
+    <!-- <script src="main_towaybinding.js"></script> -->
+    <!-- <script src="events.js"></script> -->
+    <!-- <script src="filter.js"></script> -->
+    <!-- <script src="trackBy.js"></script> -->
+    <!-- <script src="$q.js"></script> -->
+    <script src="ng-hide-show.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- start from ng-app, 
+    see this, angular starts to search
+    angular code -->
+
+    <!-- <div>10 + 2 ={{10+20}}</div> -->
+    <!-- angular expression -->
+    <!-- <div ng-app>10 + 2 ={{10+20}}</div> -->
+
+    <!-- Interpolation -->
+    <!-- <div ng-controller="myController">
+      {{message}}
+      <div>First Name: {{employee.firstName}}</div>
+      <div>Last Name: {{employee.lastName}}</div>
+      <img ng-src="{{employee.flag}}" style="height: 200px; width: 200px" />
+    </div>
+    <div ng-controller="myController1">{{message}}</div> -->
+    <!-- <div ng-controller="myController2">
+      <input type="text" ng-model="message" />
+      {{message}}
+
+      <input type="text" ng-model="employee.firstName" />
+      {{employee.firstName}}
+    </div> -->
+
+    <!-- <div ng-controller="myController3">
+      <table border="1" style="border-collapse: collapse">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Likes</th>
+            <th>Dislikes</th>
+            <th>Likes/Dislikes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="te in tech">
+            <td>{{te.name}}</td>
+            <td>{{te.likes}}</td>
+            <td>{{te.dislikes}}</td>
+            <td>
+              <input type="button" value="Like" ng-click="incrementLikes(te)" />
+              <input
+                type="button"
+                value="Dislike"
+                ng-click="decrementLikes(te)"
+              />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div> -->
+
+    <!-- <div ng-controller="myController4">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Date of Birth</th>
+            <th>Gender</th>
+            <th>Salary (number filter)</th>
+            <th>Salary (currency filter)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="employee in employees | limitTo:rowCount">
+            <td>{{ employee.name | uppercase }}</td>
+            <td>{{ employee.dateOfBirth | date:"dd/MM/yyyy" }}</td>
+            <td>{{ employee.gender }}</td>
+            <td>{{ employee.salary | number:2 }}</td>
+            <td>{{ employee.salary | currency : "£" : 1 }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div> -->
+
+    <!-- <div ng-controller="myController5">
+      <table>
+        <thead>
+          <tr>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Annual Salary</th>
+            <th>Date of Birth</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="employee in employees track by employee.code">
+            <td>{{employee.code}}</td>
+            <td>{{employee.name}}</td>
+            <td>{{employee.gender}}</td>
+            <td>{{employee.annualSalary}}</td>
+            <td>{{employee.dateOfBirth}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <button ng-click="getEmployees()">Refresh Employees</button>
+    </div> -->
+
+    <!-- <div ng-controller="myController6">
+      <h2>Result:{{result}}</h2>
+      <p>Time:{{elapsedTime}}</p>
+    </div> -->
+
+    <div ng-controller="myController7">
+      <input type="checkbox" ng-model="hideSalary" />Hide Salary
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>City</th>
+            <th ng-hide="hideSalary">Salary</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="employee in employees">
+            <td>{{ employee.name }}</td>
+            <td>{{ employee.gender}}</td>
+            <td>{{ employee.city}}</td>
+            <td ng-hide="hideSalary">{{ employee.salary }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
