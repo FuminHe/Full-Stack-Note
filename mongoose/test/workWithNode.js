@@ -61,7 +61,25 @@ router.get('/videos/:id', function (req, res){
  })
 
 // put -> update a record
-router.put("/video/:id")
+router.put('/video/:id', function(req, res){
+    console.log('Update a video')
+    Video.findByIdAndUpdate(req.params.id,
+    {
+        $set:{title:req.body.title, url:req.body.url, description:req.body.description}
+    },
+    {
+        new:true // if it is true, then updatedVideo is the updated record; if it is false, then updatedVideo will retrun the record befor update.
+    },
+    function(err, updatedVideo){
+        if(err){
+            res.send("Error updaing Video")
+        }
+        else{
+            res.json(updatedVideo)
+        }
+    }
+  )
+});
 
 // delete -> to delete a record
 router.delete("/video/:id",function(req,res){
